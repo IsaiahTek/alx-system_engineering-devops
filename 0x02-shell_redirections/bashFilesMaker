@@ -21,7 +21,12 @@ fileNames=(
 																			19-AZ
 																				20-hiago
 																					21-reverse
-																						22-users_and_homes )                                        
+																						22-users_and_homes
+																		100-empty_casks
+														101-gifs
+										102-acrostic
+						103-the_biggest_fan
+		 )					
 																						contents=(
 																								'echo "Hello, World\n"'
 																									'cat /etc/passwd\n'
@@ -43,7 +48,11 @@ fileNames=(
 																																									'tr Ac Ze\n'
 																																										'tr -d cC\n'
 																																											'rev\n'
-																																												'cut -d":" -f1,6 /etc/passwd | sort\n')                                                  
+																																												'cut -d":" -f1,6 /etc/passwd | sort\n'
+																																												'find . -empty -printf %f"\n"'
+																																													'find . -type f -name \*.gif -printf "%f\n" | LC_ALL=C sort -f | rev | cut -b 5- | rev'
+																																														'cut -c 1 | paste -s -d ""'
+																																															'tail -n +2 | cut -f -1 | sort -k 1 | uniq -c | sort -rnk 1 | head -n 11 | rev | cut -d " " -f -1 | rev')                                                  
 																																												arrayLength=${#fileNames[@]}                                                     
 																																												for (( i=0; i<${arrayLength}; i++ ));                                            
 																																												do                                                                               
